@@ -9,7 +9,7 @@
         public string ImageUrl { get; set; }
         public string Originality { get; set; }
         public int TimeInMinutes { get; set; }
-        public string TimeInString => $"{TimeInMinutes / 60}h {TimeInMinutes % 60}m";   
+        public string TimeInString => $"{TimeInMinutes / 60}h {TimeInMinutes % 60}m";
         public IEnumerable<Ingridients> Ingridients { get; set; } = Array.Empty<Ingridients>();
 
     }

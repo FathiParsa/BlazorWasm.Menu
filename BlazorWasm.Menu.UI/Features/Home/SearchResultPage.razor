@@ -4,7 +4,7 @@
 @inject HttpClient _httpClient
 
 
-<SearchFilter SearchText="@SearchText" ></SearchFilter>
+<SearchFilter SearchText="@SearchText"></SearchFilter>
 
 
 <div class="container">
@@ -31,7 +31,7 @@
 	public string SearchText { get; set; }
 
 	[Parameter]
-	public int MaxTime { get; set; } = 0;	
+	public int MaxTime { get; set; } = 0;
 
 	public IEnumerable<Recipe> Recipes { get; set; }
 

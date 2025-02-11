@@ -1,0 +1,22 @@
+﻿@inject NavigationManager _navigationManager
+
+<div class="container mt-5 mb-2">
+	<div class="form-floating py-3 pb-3">
+		<label class="form-label">Search For Recipe</label>
+		<input class="form-control pt-4" @bind="@_searchText" @bind:event="oninput" @onkeypress="@Search" />
+	</div>
+</div>
+
+@code {
+
+	private string _searchText = "";
+
+	private void Search(KeyboardEventArgs args)
+	{
+		if (args.Key != "Enter")
+			return;
+		
+		_navigationManager.NavigateTo($"/search/{_searchText}");
+	}
+
+}

@@ -1,5 +1,6 @@
 ﻿@page "/";
 @inject HttpClient _httpClient
+@using BlazorWasm.Menu.DAL.Entities;
 
 <SearchRecipe></SearchRecipe>
 
@@ -33,6 +34,8 @@
 		try
 		{
 			Recipes = await _httpClient.GetFromJsonAsync<IEnumerable<Recipe>>("/Data.json");
+			// Recipes = await _httpClient.GetFromJsonAsync<IEnumerable<Recipe>>("/api/Recipe/get-all");
+		
 		}
 		catch (Exception ex)
 		{

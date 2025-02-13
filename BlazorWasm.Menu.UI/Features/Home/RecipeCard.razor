@@ -1,13 +1,13 @@
 ﻿
 <div class="col mb-1 mt-3">
 	<div class="card shadow border">
-		<img class="card-img" src="@Recipe.ImageUrl" />
+		<img class="card-img" src="@Recipe?.ImageUrl" />
 		<div class="card-body">
-			<p class="card-title">@Recipe.Name</p>
-			<p class="card-subtitle">@Recipe.Originality</p>
+			<p class="card-title">@Recipe?.Name</p>
+			<p class="card-subtitle">@Recipe?.Originality</p>
 			<hr />
-			<p class="card-text">@Recipe.Price T</p>
-			<p class="card-text">@Recipe.TimeInString</p>
+			<p class="card-text">@Recipe?.Price T</p>
+			<p class="card-text">@Recipe?.TimeInString</p>
 			<button class="btn btn-success" @onclick="@(async() => await OnSelectedRecipe.InvokeAsync(Recipe))">Select</button>
 		</div>
 	</div>
@@ -15,8 +15,8 @@
 
 @code {
 
-	[Parameter, EditorRequired]
-	public Recipe Recipe { get; set; }
+	[Parameter]
+	public Recipe? Recipe { get; set; }
 
 	[Parameter]
 	public EventCallback<Recipe> OnSelectedRecipe { get; set; }

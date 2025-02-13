@@ -1,41 +1,45 @@
 ﻿<div class="row @_displayClass">
-	<div class="col mb-1 mt-3">
-		<div class="card shadow border">
-			<img class="card-img" src="@Recipe.ImageUrl" />
-			<div class="card-body">
-				<p class="card-title">@Recipe.Name</p>
-				<p class="card-subtitle">@Recipe.Originality</p>
-				<hr />
-				<p class="card-text">@Recipe.Price T</p>
-				<p class="card-text">@Recipe.TimeInString</p>
-				<p class="card-text">
-					@Recipe.Description
-				</p>
-				<ul>
-					@foreach (var ingridient in Recipe.Ingridients)
-					{
-						<li>
-							@ingridient.Name
-						</li>
-					}
-				</ul>
-				<span>
-					<button class="btn btn-danger" @onclick="@(() => _displayClass = "d-none")">Close</button>
-				</span>
-			</div>
-		</div>
-	</div>
+    <div class="col mb-1 mt-3">
+        <div class="card shadow border">
+            @if (!string.IsNullOrEmpty(Recipe?.ImageUrl))
+            {
+                <img class="card-img" src="@Recipe.ImageUrl" alt="Recipe Image" />
+            }
+
+            <div class="card-body">
+                <p class="card-title">@Recipe?.Name</p>
+                <p class="card-subtitle">@Recipe?.Originality</p>
+                <hr />
+                <p class="card-text">@Recipe?.Price T</p>
+                <p class="card-text">@Recipe?.TimeInString</p>
+                <p class="card-text">@Recipe?.Description</p>
+
+                @if (Recipe?.Ingridients != null && Recipe.Ingridients.Any())
+                {
+                    <ul>
+                        @foreach (var ingridient in Recipe.Ingridients)
+                        {
+                            <li>@ingridient.Name</li>
+                        }
+                    </ul>
+                }
+
+                <span>
+                    <button class="btn btn-danger" @onclick="@(() => _displayClass = "d-none")">Close</button>
+                </span>
+            </div>
+        </div>
+    </div>
 </div>
 
 @code {
+    [Parameter]
+    public Recipe? Recipe { get; set; }
 
-	[Parameter]
-	public Recipe Recipe { get; set; }
+    string? _displayClass = "d-none";
 
-	string _displayClass = "d-none";
-
-	protected override void OnParametersSet()
-	{
-		_displayClass = Recipe is null ? "d-none" : "d-bloack";
-	}
+    protected override void OnParametersSet()
+    {
+        _displayClass = Recipe is null ? "d-none" : "d-block"; // Fixed typo
+    }
 }

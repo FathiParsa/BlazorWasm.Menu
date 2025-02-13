@@ -1,8 +1,6 @@
 ﻿@page "/";
 @inject HttpClient _httpClient
 
-<Header />
-
 <SearchRecipe></SearchRecipe>
 
 <div class="container">
@@ -26,9 +24,9 @@
 
 @code {
 
-	public IEnumerable<Recipe> Recipes { get; set; }
+	public IEnumerable<Recipe>? Recipes { get; set; }
 
-	public Recipe Recipe { get; set; }
+	public Recipe? Recipe { get; set; }
 
 	protected override async Task OnInitializedAsync()
 	{
@@ -43,7 +41,7 @@
 		}
 	}
 
-	public void OnSelectedRecipeHandler(Recipe recipe)
+	public void OnSelectedRecipeHandler(Recipe? recipe)
 	{
 		Recipe = recipe;
 	}

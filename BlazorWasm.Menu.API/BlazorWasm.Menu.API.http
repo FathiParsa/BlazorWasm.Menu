@@ -1,0 +1,6 @@
+@BlazorWasm.Menu.API_HostAddress = http://localhost:5199
+
+GET {{BlazorWasm.Menu.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

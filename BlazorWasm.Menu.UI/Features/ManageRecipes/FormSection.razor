@@ -1,0 +1,21 @@
+﻿
+<div class="row border shadow m-2 p-1">
+	<div class="col-4">
+		<br />
+		<br />
+		<h4 class="fw-bold">@Title</h4>
+		<p class="text-dark">@Description</p>
+	</div>
+	<div class="col-8 border-end border-start-0">
+		@ChildContent
+	</div>
+</div>
+
+@code {
+	[Parameter]
+	public string Title { get; set; }
+	[Parameter]
+	public string Description { get; set; }
+	[Parameter]
+	public RenderFragment ChildContent { get; set; }
+}	

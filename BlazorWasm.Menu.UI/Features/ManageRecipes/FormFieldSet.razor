@@ -1,0 +1,15 @@
+﻿
+<div class="@Width m-3">
+	<div class="form-floating py-3">
+		@ChildContent
+	</div>
+</div>
+
+
+@code {
+	[Parameter ,EditorRequired]
+	public RenderFragment ChildContent { get; set; }
+
+	[Parameter]
+	public string Width { get; set; } = "col";
+}

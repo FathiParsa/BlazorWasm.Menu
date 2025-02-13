@@ -1,0 +1,79 @@
+﻿@page "/add-recipe"
+
+
+<PageTitle>Add New Recipe To The Menu</PageTitle>
+
+<EditForm Model="_recipe" OnValidSubmit="SubmitForm">
+	<div class="container mx-auto m-3">
+		<FormSection Title="Main Informations" Description="These Field Are Required. Fill Them All.">
+			<FormFieldSet>
+				<label class="form-lable text-black fw-bold" for="Name">Name</label>
+				<InputText class="form-control" id="Name" @bind-Value="_recipe.Name"></InputText>
+			</FormFieldSet>
+			<FormFieldSet>
+				<label class="form-lable text-black fw-bold" for="Description">Description</label>
+				<InputTextArea rows="6" class="form-control" id="Description" @bind-Value="_recipe.Description" style="height: auto;"></InputTextArea>
+			</FormFieldSet>
+			<FormFieldSet>
+				<label class="form-lable text-black fw-bold" for="Originality">Originality</label>
+				<InputText class="form-control" id="Originality" @bind-value="_recipe.Originality"></InputText>
+			</FormFieldSet>
+			<FormFieldSet>
+				<label class="form-lable text-black fw-bold" for="TimeInMinutes">TimeInMinutes</label>
+				<InputNumber class="form-control" id="TimeInMinutes" @bind-value="_recipe.TimeInMinutes"></InputNumber>
+			</FormFieldSet>
+			<FormFieldSet>
+				<label class="form-lable text-black fw-bold" for="Price">Price</label>
+				<InputNumber class="form-control" id="Price" @bind-value="_recipe.Price"></InputNumber>
+			</FormFieldSet>
+
+
+		</FormSection>
+
+		<FormSection Title="Ingridients" Description="Add Ingridients of This Recipe">
+
+			@foreach (var ingridient in _recipe.Ingridients)
+			{
+				<FormFieldSet>
+					<label class="form-label fw-bold" for="IngridientName"> Ingridient Name</label>
+					<InputText class="form-control" id="IngridientName" @bind-Value="@ingridient.Name"></InputText>
+
+					<button type="button" class="btn btn-outline-danger m-2"
+							@onclick="@(() => _recipe.Ingridients.Remove(ingridient))">
+						Remove
+					</button>
+
+				</FormFieldSet>
+			}
+
+
+			<button type="button" class="btn btn-outline-primary mt-auto"
+					@onclick="@(() => _recipe.Ingridients.Add(new IngridientDto()))">
+				Add New Ingridient
+			</button>
+
+
+		</FormSection>
+
+		<div class="row m-2 p-1">
+			<div class="d-flex justify-content-end">
+				<button type="button" class="btn btn-outline-secondary m-2" @onclick="@(()=> _recipe = new RecipeDto())">
+					Reset
+				</button>
+				<button class="btn btn-primary m-2" type="submit">Submit</button>
+			</div>
+		</div>
+
+	</div>
+
+</EditForm>
+
+
+@code {
+	private RecipeDto _recipe = new RecipeDto();
+
+	private async Task SubmitForm()
+	{
+
+	}
+}

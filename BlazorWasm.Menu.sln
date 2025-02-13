@@ -5,6 +5,12 @@ VisualStudioVersion = 17.12.35506.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWasm.Menu.UI", "BlazorWasm.Menu.UI\BlazorWasm.Menu.UI.csproj", "{3416C17F-2F84-4955-A31A-931E5F484E48}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWasm.Menu.API", "BlazorWasm.Menu.API\BlazorWasm.Menu.API.csproj", "{5D6E52B3-BFED-477F-BC83-3B82D79CA69F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWasm.Menu.Shared", "BlazorWasm.Menu.Shared\BlazorWasm.Menu.Shared.csproj", "{E4B38AB5-9D05-4857-AA8A-D7947EE41458}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazorWasm.Menu.DAL", "BlazorWasm.Menu.DAL\BlazorWasm.Menu.DAL.csproj", "{2924C695-7F2D-43E8-9E61-09E918D7DD76}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +21,18 @@ Global
 		{3416C17F-2F84-4955-A31A-931E5F484E48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3416C17F-2F84-4955-A31A-931E5F484E48}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3416C17F-2F84-4955-A31A-931E5F484E48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D6E52B3-BFED-477F-BC83-3B82D79CA69F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D6E52B3-BFED-477F-BC83-3B82D79CA69F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D6E52B3-BFED-477F-BC83-3B82D79CA69F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D6E52B3-BFED-477F-BC83-3B82D79CA69F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4B38AB5-9D05-4857-AA8A-D7947EE41458}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4B38AB5-9D05-4857-AA8A-D7947EE41458}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4B38AB5-9D05-4857-AA8A-D7947EE41458}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4B38AB5-9D05-4857-AA8A-D7947EE41458}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2924C695-7F2D-43E8-9E61-09E918D7DD76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2924C695-7F2D-43E8-9E61-09E918D7DD76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2924C695-7F2D-43E8-9E61-09E918D7DD76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2924C695-7F2D-43E8-9E61-09E918D7DD76}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
